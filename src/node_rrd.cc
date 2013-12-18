@@ -34,6 +34,7 @@ extern "C" {
         NODE_SET_METHOD(target, "fetch", node_rrd::fetch);
         NODE_SET_METHOD(target, "last", node_rrd::last);
         NODE_SET_METHOD(target, "info", node_rrd::info);
+        NODE_SET_METHOD(target, "xport", node_rrd::xport);
     }
 
     NODE_MODULE(rrd_bindings, init)

@@ -178,6 +178,10 @@ Handle<Value> last(const Arguments &args);
 */
 Handle<Value> info(const Arguments &args); 
 
+/*
+*/
+Handle<Value> xport(const Arguments &args); 
+
 }
 
 using namespace node_rrd;
