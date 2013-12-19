@@ -69,15 +69,6 @@ Handle<Value> xport(const Arguments &args) { /* rrd.xport(Array spec, Function c
     // Get spec array
     SET_ARGC_ARGV_ARG(0, info->argc, info->argv)
 
-//    // Get step
-//    info->step = args[1]->Uint32Value();
-//
-//    // Get start time
-//    info->start = args[2]->Uint32Value();
-//
-//    // Get end time
-//    info->end = args[3]->Uint32Value();
-
     // Get callback
     SET_PERSFUN_ARG(1, info->callback)
 
