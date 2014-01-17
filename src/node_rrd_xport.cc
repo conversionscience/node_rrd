@@ -111,6 +111,7 @@ static void async_after(uv_work_t *req) {
         Handle<Value> res[] = { Number::New(info->status), String::New(rrd_get_error()) };
         info->callback->Call(Context::GetCurrent()->Global(), 2, res);
     }
+    rrd_clear_error();
     delete(info);
 }
 
