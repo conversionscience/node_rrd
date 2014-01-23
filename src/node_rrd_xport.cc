@@ -127,7 +127,12 @@ Handle<Object> create_object(Infos * info, rrd_value_t *data) {
 
     datai = info->data;
     int numRows = 0;
-    for (ti = info->start; ti <= info->end; ti += info->step) {
+    // in rrdtool xport, the first item printed to stdout is start+step, but
+    // I'm not sure this is right. If we look here
+    // https://github.com/oetiker/rrdtool-1.x/blob/master/src/rrd_xport.c#L335
+    // we can see that start is not changed, but end is, so I guess what is
+    // exported is [start, end).
+    for (ti = info->start; ti < info->end; ti += info->step) {
     	numRows += 1;
     	exportedData->Set(Number::New(ti), current_data_to_array(info->col_cnt, datai));
         datai += info->col_cnt;
